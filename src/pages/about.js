@@ -41,19 +41,37 @@ const About = () => {
                 your next project.
               </p>
             </div>
+
             <div
-              className="col-span-3 h-max relative rounded-2xl border-2 border-solid border-dark
-        bg-light p-8"
+              className="col-span-3 mt-[1rem] h-max relative  rounded-2xl border-2 border-solid border-dark
+        bg-dark p-8 "
             >
               <div
-                className="absolute border-2 top-0 -right-3 -z-10 w-[102%] h-[103%] 
-                rounded-[2rem] bg-dark"
+                className=" absolute
+               z-2 bottom-2 -left-4 z-[0]  w-[102%] h-[103%] rounded-2xl  bg-light border-dark border-2"
               />
               <Image
                 src={ProfilePicture}
                 alt="my-image "
-                className="w-full h-auto rounded-2xl"
+                className="relative  w-full h-auto rounded-2xl pr-4 pb-4"
               />
+            </div>
+
+            <div>
+              <div>
+                <span>50+</span>
+                <h2>satisfied clients</h2>
+              </div>
+
+              <div>
+                <span>40+</span>
+                <h2>projects completed</h2>
+              </div>
+
+              <div>
+                <span>5+</span>
+                <h2>years of experience</h2>
+              </div>
             </div>
           </div>
         </Layout>
