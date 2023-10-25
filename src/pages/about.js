@@ -45,7 +45,10 @@ const About = () => {
               className="col-span-3 h-max relative rounded-2xl border-2 border-solid border-dark
         bg-light p-8"
             >
-              <div className="absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-dark" />
+              <div
+                className="absolute border-2 top-0 -right-3 -z-10 w-[102%] h-[103%] 
+                rounded-[2rem] bg-dark"
+              />
               <Image
                 src={ProfilePicture}
                 alt="my-image "
