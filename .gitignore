@@ -1,30 +1,28 @@
-# Node.js
-node_modules/
+node_modules
 
-# Next.js build output
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+/.next
 .next/
 
-# Compiled files
-out/
 
-# Logs
-logs/
-*.log
 
-# User-specific files
-.vscode/
-.env
+# testing
+/coverage
 
-# Build output
-build/
-public/
+# production
+/build
 
-# Tailwind CSS cache
-.cache/
-
-# OS generated files
+# misc
 .DS_Store
-Thumbs.db
+/.DS_Store
+.env.loca
+.env.development.local
+.env.test.local
+.env.production.local
 
-# Yarn
-yarn-error.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

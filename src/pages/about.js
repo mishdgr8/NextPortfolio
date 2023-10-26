@@ -2,10 +2,48 @@ import AnimateText from "@/components/AnimateText";
 import Layout from "@/components/Layout";
 import Head from "next/head";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import ProfilePicture from "@/../public/images/profile/profilepic.jpg";
-import { motion } from "framer-motion";
+import { motion, useInView, useMotionValue, useSpring } from "framer-motion";
+import Skills from "@/components/Skills";
+
+const AnimatedNumbers = ({ value }) => {
+  const ref = useRef(null);
+  const motionValue = useMotionValue(0);
+  const springValue = useSpring(motionValue, { duration: 3000 });
+  const isInView = useInView(ref, { once: true });
+
+  useEffect(() => {
+    if (isInView) {
+      motionValue.set(value);
+    }
+  }, [isInView, value, motionValue]);
+
+  useEffect(() => {
+    springValue.on("change", (latest) => {
+      if (ref.current && latest.toFixed(0) <= value) {
+        ref.current.textContent = latest.toFixed(0);
+      }
+    });
+  }, [springValue, value]);
+
+  return <span ref={ref}></span>;
+};
+
 const About = () => {
+  const variants = {
+    hidden: {
+      x: 100, // Move the element 100 pixels to the right (adjust as needed)
+      opacity: 0, // Make it initially invisible
+    },
+    visible: {
+      x: 0, // Move the element back to its original position
+      opacity: 1, // Make it visible
+      transition: {
+        duration: 1, // Adjust the animation duration as needed
+      },
+    },
+  };
   return (
     <>
       <Head>
@@ -57,23 +95,42 @@ const About = () => {
               />
             </div>
 
-            <motion.div className="">
-              <div>
-                <span className="text-8xl font-extrabold ">50+</span>
-                <h2 className=" font-medium text-lg">satisfied clients</h2>
+            <motion.div
+              className=" col-span-2 flex flex-col items-end justify-between"
+              initial="hidden"
+              animate="visible"
+              variants={variants}
+            >
+              <div className="flex flex-col items-end justify-center ">
+                <span className=" inline-block text-8xl font-extrabold ">
+                  <AnimatedNumbers value={50} />+
+                </span>
+                <h2 className=" font-medium text-lg capitalize text-dark/75">
+                  satisfied clients
+                </h2>
               </div>
 
-              <div>
-                <span className="text-8xl font-extrabold ">40+</span>
-                <h2 className=" font-medium text-lg">projects completed</h2>
+              <div className="flex flex-col items-end justify-center ">
+                <span className="text-8xl font-extrabold ">
+                  <AnimatedNumbers value={40} />+
+                </span>
+                <h2 className=" font-medium text-lg capitalize text-dark/75">
+                  projects completed
+                </h2>
               </div>
 
-              <div>
-                <span className="text-8xl font-extrabold ">5+</span>
-                <h2 className=" font-medium text-lg">years of experience</h2>
+              <div className="flex flex-col items-start justify-center ">
+                <span className="text-8xl font-extrabold ">
+                  <AnimatedNumbers value={5} />+
+                </span>
+                <h2 className=" font-medium text-lg text-dark/75 capitalize">
+                  years of experience
+                </h2>
               </div>
             </motion.div>
           </div>
+
+          <Skills />
         </Layout>
       </main>
     </>
