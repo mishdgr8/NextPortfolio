@@ -4,12 +4,12 @@ import Head from "next/head";
 import Image from "next/image";
 import React from "react";
 import ProfilePicture from "@/../public/images/profile/profilepic.jpg";
-
+import { motion } from "framer-motion";
 const About = () => {
   return (
     <>
       <Head>
-        <title>About Me | My Woooooork</title>
+        <title>About Me | My Work</title>
         <meta name="Description" content="description" />
       </Head>
       <main>
@@ -57,22 +57,22 @@ const About = () => {
               />
             </div>
 
-            <div>
+            <motion.div className="">
               <div>
-                <span>50+</span>
-                <h2>satisfied clients</h2>
+                <span className="text-8xl font-extrabold ">50+</span>
+                <h2 className=" font-medium text-lg">satisfied clients</h2>
               </div>
 
               <div>
-                <span>40+</span>
-                <h2>projects completed</h2>
+                <span className="text-8xl font-extrabold ">40+</span>
+                <h2 className=" font-medium text-lg">projects completed</h2>
               </div>
 
               <div>
-                <span>5+</span>
-                <h2>years of experience</h2>
+                <span className="text-8xl font-extrabold ">5+</span>
+                <h2 className=" font-medium text-lg">years of experience</h2>
               </div>
-            </div>
+            </motion.div>
           </div>
         </Layout>
       </main>

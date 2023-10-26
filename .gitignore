@@ -1,5 +1,30 @@
-node_modules
-/.next/
-/build
-.vercel
+# Node.js
+node_modules/
+
+# Next.js build output
+.next/
+
+# Compiled files
+out/
+
+# Logs
+logs/
+*.log
+
+# User-specific files
+.vscode/
 .env
+
+# Build output
+build/
+public/
+
+# Tailwind CSS cache
+.cache/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Yarn
+yarn-error.log
