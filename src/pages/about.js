@@ -9,7 +9,7 @@ const About = () => {
   return (
     <>
       <Head>
-        <title>About Me | My Work</title>
+        <title>About Me | My Woooooork</title>
         <meta name="Description" content="description" />
       </Head>
       <main>
