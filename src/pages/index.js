@@ -7,6 +7,7 @@ import ProfilePic from "../../public/images/profile/developer-pic-1.png";
 import Link from "next/link";
 import { LinkArrow } from "@/components/Icons";
 import HireMe from "@/components/HireMe";
+import About from "./about";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -57,6 +58,7 @@ export default function Home() {
             </div>
           </div>
         </Layout>
+
         <HireMe />
       </main>
     </>
